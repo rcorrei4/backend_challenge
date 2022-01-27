@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#Link para banco de dados (presente no arquivo .env)
 SQLALCHEMY_DATABASE_URL = os.environ.get('SQLALCHEMY_DATABASE_URL')
 
 engine = create_engine(

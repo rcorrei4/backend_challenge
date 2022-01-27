@@ -1,11 +1,13 @@
 from pydantic import BaseModel
 from typing import Optional
 
+#Schemas "In" são necessários para post requests
+
 class EventsIn(BaseModel):
     provider: str
 
 class Events(BaseModel):
-    id: int
+    id: str
     provider: str
 
     class Config:
@@ -15,7 +17,7 @@ class LaunchesIn(BaseModel):
     provider: str
 
 class Launches(BaseModel):
-    id: int
+    id: str
     provider: str
 
     class Config:

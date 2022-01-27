@@ -1,7 +1,7 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from database import Base
+from core.database.settings import Base
 
 
 class Articles(Base):
@@ -23,7 +23,7 @@ class Articles(Base):
 class Launches(Base):
     __tablename__ = "launches"
 
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True)
     provider = Column(String)
 
     article_id = Column(Integer, ForeignKey('articles.id'))
@@ -31,7 +31,7 @@ class Launches(Base):
 class Events(Base):
     __tablename__ = "events"
 
-    id = Column(String, primary_key=True, index=True)
+    id = Column(String, primary_key=True)
     provider = Column(String)
 
     article_id = Column(Integer, ForeignKey('articles.id'))
