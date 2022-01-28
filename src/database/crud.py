@@ -1,10 +1,9 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 
-from src.func import criar_event_launch
+from .func import criar_event_launch
 from . import models
 from src.schemas import schemas
-
 
 def get_article(db: Session, article_id: int):
     return db.query(models.Articles).filter(models.Articles.id == article_id).first()

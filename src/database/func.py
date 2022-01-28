@@ -1,4 +1,4 @@
-from .database import models
+from . import models
 
 def criar_event_launch(event_launch, article, db_article, db):
     if event_launch == "events":
