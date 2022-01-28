@@ -1,6 +1,4 @@
-
 # Back-end Challenge 2021 🏅 - Space Flight News
-
 
 ## Sobre o projeto
 RESTful API inspirada na Space Flight News API, que faz possível criar, editar, atualizar e excluir artigos que foram extraídos da Space Flight News API.
@@ -12,19 +10,21 @@ RESTful API inspirada na Space Flight News API, que faz possível criar, editar,
 - PostgreSQL
 
 ## Instalação utilizando docker
-Siga os passos a seguir para rodar o projeto
+Siga os passos a seguir para instalar o projeto `(Necessário ter o Python 3.9 ou acima instalado!)`
 
-Clone este repositório no seu dispositivo
+<br />
+
+Clone este repositório no seu dispositivo:
 ~~~shell
 git clone https://github.com/rcorrei4/backend_challenge.git
 ~~~
 
-Após isso
+Após isso:
 ~~~shell
 cd backend_challenge
 ~~~
 
-Criar imagem do docker
+Crie a imagem do docker:
 ~~~shell
 docker build -t backend_challenge .
 ~~~
@@ -45,4 +45,8 @@ sudo docker run --env-file .env -p 8000:8000 -t -i backend_challenge
 ~~~
 <br />
 
-> This is a challenge by Coodesh
+Para acessar o app digite o seguinte link no navegador:
+`127.0.0.1:8000`
+<br />
+
+> This is a challenge by [Coodesh](https://coodesh.com/)
