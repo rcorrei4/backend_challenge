@@ -1,3 +1,4 @@
+
 # Back-end Challenge 2021 🏅 - Space Flight News
 
 
@@ -35,6 +36,11 @@ Antes de tudo renomeie o arquivo `.env.example` para `.env` e insira a url do ba
 Após isso execute o script para preencher o banco de dados:
 ~~~shell
 python3 src/populate_database.py
+~~~
+
+E finalmente inicie o app:
+~~~shell
+sudo docker run --env-file .env -p 8000:8000 -t -i backend_challenge
 ~~~
 
 
