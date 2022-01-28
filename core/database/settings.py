@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 
+#Carregar as váriaveis do arquivo .env
 load_dotenv()
 
 #Link para banco de dados (presente no arquivo .env)

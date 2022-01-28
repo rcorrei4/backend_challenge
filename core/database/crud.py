@@ -9,9 +9,9 @@ from core.schemas import schemas
 def get_article(db: Session, article_id: int):
     return db.query(models.Articles).filter(models.Articles.id == article_id).first()
 
-def get_articles(db: Session, skip: int = 0, limit: int = 100):
-    #Envia os artigos ordenando por id, pode ter limite ou nº de artigos que serão ignorados
-    return db.query(models.Articles).order_by(models.Articles.id).offset(skip).limit(limit).all()
+def get_articles(db: Session, limit: int):
+    #Envia os artigos ordenando por id podendo ter limite de resultado.
+    return db.query(models.Articles).order_by(models.Articles.id.desc()).limit(limit).all()
 
 def create_article(db: Session, article: schemas.ArticleIn):
 
@@ -26,9 +26,9 @@ def create_article(db: Session, article: schemas.ArticleIn):
 
     #Caso tenha events ou launches adiciona dentro do objeto artigo
     if article.events:
-        return criar_event_launch("events", article, db_article, db)
+        criar_event_launch("events", article, db_article, db)
     if article.launches:
-        return criar_event_launch("launches", article, db_article, db)
+        criar_event_launch("launches", article, db_article, db)
 
     db.commit()
     return db_article
@@ -67,3 +67,8 @@ def delete_article(db: Session, article_id: int):
     db.delete(db_article)
     db.commit()
     return {'Deleted'}
+
+def get_last_article(db: Session):
+    last_article = db.query(models.Articles).order_by(models.Articles.id.desc()).first()
+    
+    return last_article
