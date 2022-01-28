@@ -28,6 +28,7 @@ Criar imagem do docker
 ~~~shell
 docker build -t backend_challenge .
 ~~~
+<br />
 
 ## Rodar o projeto
 
@@ -42,6 +43,6 @@ E finalmente inicie o app:
 ~~~shell
 sudo docker run --env-file .env -p 8000:8000 -t -i backend_challenge
 ~~~
-
+<br />
 
 > This is a challenge by Coodesh
