@@ -15,7 +15,7 @@ def check_articles():
 	articles = result.json()
 
 	if articles:
-		print("Adicionando novos artigos...")
+		print(f"Adicionando {len(articles)} novos artigos ao banco de dados...")
 		for article in list(reversed(articles)):
 			article = schemas.Article.parse_obj(article)
 

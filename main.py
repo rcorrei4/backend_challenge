@@ -20,5 +20,5 @@ async def welcome():
 @app.on_event('startup')
 async def update_article():
     scheduler = BackgroundScheduler(timezone="America/Sao_Paulo")
-    scheduler.add_job(check_articles, 'cron', hour=9)
+    scheduler.add_job(check_articles, 'cron', hour=23, minute=49)
     scheduler.start()

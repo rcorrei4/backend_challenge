@@ -7,11 +7,11 @@ from core.database.settings import SessionLocal
 # Dependency
 db = SessionLocal()
 
-print("Contando o número de artigos a serem adicionados...")
+print("Recebendo o número de artigos a serem adicionados...")
 articles_count_request = requests.get(url="https://api.spaceflightnewsapi.net/v3/articles/count")
 articles_count = articles_count_request.json()
 
-result = requests.get(url="https://api.spaceflightnewsapi.net/v3/articles", params={"_limit": articles_count, "_start": 1})
+result = requests.get(url="https://api.spaceflightnewsapi.net/v3/articles", params={"_limit": articles_count})
 print(f"Adicionando {articles_count} artigos ao banco de dados...")
 
 articles = result.json()
