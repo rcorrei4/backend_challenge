@@ -1,8 +1,8 @@
 import requests
 
-from core.database.crud import get_last_article, create_article
-from core.database.settings import SessionLocal
-from core.schemas import schemas
+from src.database.crud import get_last_article, create_article
+from src.database.settings import SessionLocal
+from src.schemas import schemas
 
 def check_articles():
 	db = SessionLocal()

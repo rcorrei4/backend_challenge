@@ -2,9 +2,9 @@ from fastapi import APIRouter
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from core.schemas import schemas
-from core.database import crud
-from core.database.settings import SessionLocal
+from src.schemas import schemas
+from src.database import crud
+from src.database.settings import SessionLocal
 
 # Dependency
 def get_db():

@@ -3,10 +3,10 @@ import asyncio
 from fastapi import Depends, FastAPI, HTTPException
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from core.models import models
-from core.routes import articles as article_routes
-from core.database.settings import SessionLocal, engine
-from cron import check_articles
+from .database import models
+from .routes import articles as article_routes
+from .database.settings import SessionLocal, engine
+from .cron import check_articles
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -20,5 +20,5 @@ async def welcome():
 @app.on_event('startup')
 async def update_article():
     scheduler = BackgroundScheduler(timezone="America/Sao_Paulo")
-    scheduler.add_job(check_articles, 'cron', hour=23, minute=49)
+    scheduler.add_job(check_articles, 'cron', hour=9)
     scheduler.start()
