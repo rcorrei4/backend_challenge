@@ -21,9 +21,9 @@ router = APIRouter(
 )
 
 @router.get("/articles/", response_model=list[schemas.Article])
-async def read_articles(limit: int = 10, db: Session = Depends(get_db)):
+async def read_articles(page_limit: int = 10, page_index: int = 1, db: Session = Depends(get_db)):
 
-    articles = crud.get_articles(db, limit=limit)
+    articles = crud.get_articles(db, page_size=page_limit, page_index=page_index)
 
     return articles
 

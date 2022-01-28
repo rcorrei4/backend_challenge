@@ -8,9 +8,10 @@ from src.schemas import schemas
 def get_article(db: Session, article_id: int):
     return db.query(models.Articles).filter(models.Articles.id == article_id).first()
 
-def get_articles(db: Session, limit: int):
+def get_articles(db: Session, page_size: int, page_index: int):
     #Envia os artigos ordenando por id podendo ter limite de resultado.
-    return db.query(models.Articles).order_by(models.Articles.id.desc()).limit(limit).all()
+    return db.query(models.Articles).order_by(models.Articles.id.desc()).limit(page_size).offset((page_index-1)*page_size).all()
+
 
 def create_article(db: Session, article: schemas.ArticleIn):
 
