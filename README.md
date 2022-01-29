@@ -46,7 +46,7 @@ sudo docker run --env-file .env -p 8000:8000 -t -i backend_challenge
 <br />
 
 Para acessar o app digite o seguinte link no navegador:
-`127.0.0.1:8000`
+`0.0.0.0.1:8000`
 <br />
 
 > This is a challenge by [Coodesh](https://coodesh.com/)
