@@ -15,7 +15,6 @@ def get_db():
         db.close()
 
 router = APIRouter(
-    prefix="/articles",
     tags=["articles"],
     responses={403: {"description": "Forbidden"}},
 )
