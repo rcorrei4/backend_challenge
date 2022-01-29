@@ -3,6 +3,7 @@ import requests
 from schemas import schemas
 from database.func import criar_event_launch
 from database.settings import SessionLocal
+from database import models
 
 # Dependency
 db = SessionLocal()
